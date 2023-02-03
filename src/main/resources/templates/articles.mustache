@@ -1,0 +1,24 @@
+<a href="/articles/create">Créer un article</a>
+<table class="table">
+<tr>
+    <th>Image</th>
+    <th>Libelle</th>
+    <th>Prix</th>
+    <th>Stock</th>
+</tr>
+{{#articles}}
+<tr>
+    <td><img src="{{imageUrl}}" width="70"/></td>
+    <td><a href="/articles/{{id}}">{{libelle}}</a></td>
+    <td>{{prix}}</td>
+    <td>
+        {{#enRupture}}
+            <span class="error">En rupture</span>
+        {{/enRupture}}
+        {{^enRupture}}
+            En stock
+        {{/enRupture}}
+    </td>
+</tr>
+{{/articles}}
+</table>
